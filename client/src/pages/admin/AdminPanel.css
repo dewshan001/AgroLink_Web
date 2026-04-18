@@ -1,0 +1,16 @@
+﻿/* Hide scrollbar for all browsers */
+.adminSidebarNav::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.adminSidebarNav {
+  scrollbar-width: none;
+}
+
+/* IE and Edge */
+.adminSidebarNav {
+  -ms-overflow-style: none;
+}
+
+

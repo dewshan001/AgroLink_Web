@@ -1,0 +1,408 @@
+﻿.singlePost {
+  flex: 9;
+}
+
+.singlePostWrapper {
+  padding: 48px;
+  background: var(--bg-card); /* White in Light, Deep Black in Dark */
+  border-radius: var(--radius-zen);
+  border: 1px solid var(--glass-border);
+  margin: 24px 0;
+  box-shadow: var(--shadow-zen);
+}
+
+.singlePostImg {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.singlePostImgContainer {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.singlePostImgPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-snow);
+  border: 2px dashed var(--slate-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--slate-400);
+  border-radius: var(--radius-sm);
+}
+
+.singlePostImgPlaceholder i {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.singlePostImgPlaceholder span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.singlePostImgUpdateOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s var(--ease-zen);
+}
+
+.singlePostImgContainer:hover .singlePostImgUpdateOverlay {
+  opacity: 1;
+}
+
+.singlePostImgUpdateBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--bg-snow);
+  color: var(--forest-900);
+  border-radius: 14px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s var(--ease-zen);
+}
+
+.singlePostImgUpdateBtn:hover {
+  transform: translateY(-4px);
+  background: var(--emerald-600);
+  color: #fff;
+  box-shadow: 0 15px 30px rgba(5, 150, 105, 0.3);
+}
+
+.singlePostTitle {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--forest-900);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.singlePostEdit {
+  float: right;
+  display: flex;
+  gap: 12px;
+}
+
+.singlePostIcon {
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.3s var(--ease-zen);
+}
+
+.singlePostIcon.far.fa-edit {
+  color: var(--emerald-600);
+  background: var(--mint-100);
+}
+
+.singlePostIcon.far.fa-trash-alt {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.singlePostIcon:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.9);
+}
+
+.singlePostInfo {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  margin-bottom: 40px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-600);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.singlePostAuthor b {
+  color: var(--emerald-600);
+}
+
+.singlePostDesc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--slate-900);
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
+.singlePostDesc p {
+  margin: 0 0 14px;
+}
+
+.singlePostDesc h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--forest-900);
+  margin: 24px 0 12px;
+}
+
+.singlePostDesc h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--forest-900);
+  margin: 18px 0 8px;
+}
+
+.singlePostDesc ul,
+.singlePostDesc ol {
+  padding-left: 26px;
+  margin: 6px 0 14px;
+}
+
+.singlePostDesc li {
+  margin-bottom: 4px;
+}
+
+.singlePostDesc b,
+.singlePostDesc strong {
+  font-weight: 700;
+  color: var(--forest-900);
+}
+
+.singlePostDesc > p:first-child::first-letter,
+.singlePostDesc > div:first-child::first-letter,
+.singlePostDesc::first-letter {
+  font-size: 3.6em;
+  font-weight: 800;
+  font-family: var(--font-display);
+  color: var(--emerald-600);
+  line-height: 1;
+}
+
+.singlePostTitleInput {
+  width: 100%;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  border-bottom: 2px solid var(--emerald-600);
+  margin-bottom: 32px;
+  color: var(--forest-900); /* White/Heading in dark mode */
+  background: transparent;
+}
+
+.singlePostTitleInput:focus {
+  outline: none;
+}
+
+.singlePostDescInput {
+  width: 100%;
+  min-height: 450px;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-snow);
+  padding: 32px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--slate-900);
+}
+
+.singlePostDescInput:focus {
+  outline: none;
+  background: var(--slate-200);
+  border-color: var(--emerald-600);
+}
+
+.singlePostUpdateActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.singlePostUpdateButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.singlePostButton {
+  background: linear-gradient(135deg, var(--emerald-600) 0%, var(--emerald-700) 100%);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.4);
+  transition: all 0.3s var(--ease-zen);
+}
+
+.singlePostButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(5, 150, 105, 0.5);
+  filter: brightness(1.1);
+}
+
+.singlePostCancelButton {
+  background: #f1f5f9;
+  color: var(--slate-600);
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: 1px solid var(--slate-200);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-zen);
+}
+
+.singlePostCancelButton:hover {
+  background: var(--slate-200);
+  color: var(--forest-900);
+}
+
+.singlePostConfirmContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.singlePostConfirmBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.singlePostConfirmModal {
+  position: relative;
+  width: min(92vw, 460px);
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: var(--shadow-zen);
+  text-align: center;
+}
+
+.singlePostConfirmIcon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 14px;
+  background: var(--mint-100);
+  color: var(--emerald-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.singlePostConfirmTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--forest-900);
+}
+
+.singlePostConfirmText {
+  margin: 10px 0 0;
+  font-family: var(--font-body);
+  color: var(--slate-600);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.singlePostConfirmActions {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.singlePostConfirmCancel,
+.singlePostConfirmProceed {
+  border: none;
+  border-radius: 10px;
+  padding: 11px 18px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-zen);
+}
+
+.singlePostConfirmCancel {
+  background: #f1f5f9;
+  color: var(--slate-600);
+  border: 1px solid var(--slate-200);
+}
+
+.singlePostConfirmCancel:hover {
+  background: var(--slate-200);
+}
+
+.singlePostConfirmProceed.success {
+  background: var(--emerald-600);
+  color: #fff;
+}
+
+.singlePostConfirmProceed.success:hover {
+  background: var(--emerald-700);
+}
+
+.singlePostConfirmProceed.danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.singlePostConfirmProceed.danger:hover {
+  background: #dc2626;
+}
+
+@media screen and (max-width: 768px) {
+  .singlePostWrapper {
+    padding: 24px;
+  }
+  .singlePostTitle {
+    font-size: 28px;
+  }
+}
+

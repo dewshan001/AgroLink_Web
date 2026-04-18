@@ -1,0 +1,229 @@
+﻿.top {
+  width: 100%;
+  height: 70px;
+  background: var(--glass-zen);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  z-index: 1000;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.topLeft,
+.topRight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.topRight {
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.topCenter {
+  flex: 2;
+}
+
+.topIcon {
+  font-size: 16px;
+  margin-right: 20px;
+  color: var(--slate-600);
+  cursor: pointer;
+  transition: all var(--duration-zen) var(--ease-zen);
+}
+
+.topIcon:hover {
+  color: var(--emerald-600);
+  transform: translateY(-2px);
+}
+
+.topList {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 28px;
+}
+
+.topListItem {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate-900);
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.topListItem::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--emerald-600);
+  transition: width 0.3s var(--ease-zen);
+}
+
+.topListItem:hover::after {
+  width: 100%;
+}
+
+.themeToggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--slate-200);
+  color: var(--slate-600);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-zen);
+  font-size: 16px;
+}
+
+.themeToggle:hover {
+  background: var(--mint-100);
+  color: var(--emerald-600);
+  transform: translateY(-2px);
+}
+
+.themeToggle i {
+  transition: transform 0.5s var(--ease-zen);
+}
+
+.themeToggle:hover i {
+  transform: rotate(15deg);
+}
+
+.topImg {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1.5px solid var(--emerald-600);
+  transition: all 0.3s var(--ease-zen);
+}
+
+.topImg:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-subtle);
+}
+
+.topImgDefault {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--emerald-600), var(--emerald-700));
+  border: 2.5px solid rgba(5, 150, 105, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s var(--ease-zen);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+}
+
+.topImgDefault:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+  .top {
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .topList {
+    gap: 16px;
+  }
+
+  .topLeft {
+    display: flex;
+  }
+}
+
+.topLogoTrigger {
+  cursor: pointer;
+  padding: 10px;
+  margin-left: -5px;
+  display: flex;
+  align-items: center;
+}
+
+.topHamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--slate-600);
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  transition: all 0.3s var(--ease-zen);
+  margin-right: 10px;
+}
+
+.topHamburger:hover {
+  background: var(--mint-100);
+  color: var(--emerald-600);
+  transform: scale(1.05);
+}
+
+.adminDropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  min-width: 160px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(6, 78, 59, 0.08);
+  padding: 16px 18px;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.adminDropdownName {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--emerald-600);
+  margin-bottom: 6px;
+}
+
+.adminDropdownLogout {
+  background: linear-gradient(135deg, #059669 0%, #06523c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.adminDropdownLogout:hover {
+  background: linear-gradient(135deg, #06523c 0%, #059669 100%);
+}
+

@@ -1,0 +1,173 @@
+﻿/* Identity Verification Modal - Premium Secure Redesign */
+.vModalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000;
+}
+
+.vModalBackdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(6, 78, 59, 0.3);
+  backdrop-filter: blur(16px) brightness(0.8) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) brightness(0.8) saturate(1.2);
+  animation: zenFadeIn 0.8s var(--ease-zen) forwards;
+}
+
+.vModalWrapper {
+  position: relative;
+  width: 480px;
+  background: var(--glass-zen);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 64px 48px;
+  border-radius: 40px;
+  box-shadow: 0 40px 120px -20px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--glass-border);
+  z-index: 20001;
+  animation: modalEntrance 0.7s var(--ease-zen) both;
+  transition: all var(--duration-zen) var(--ease-zen);
+}
+
+.vModalHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.vModalIcon {
+  width: 80px;
+  height: 80px;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--emerald-600);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.15);
+  border: 1px solid var(--glass-border);
+}
+
+.vModalTitle {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--forest-900);
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.vModalDesc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--slate-600);
+  text-align: center;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.vModalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vModalForm label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-left: 4px;
+}
+
+.vModalForm input {
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--bg-snow);
+  font-size: 16px;
+  font-family: var(--font-body);
+  color: var(--slate-900);
+  transition: all 0.3s var(--ease-zen);
+}
+
+.vModalForm input:focus {
+  outline: none;
+  border-color: var(--emerald-600);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.vModalInputDisabled {
+  background: var(--slate-200) !important;
+  color: var(--slate-400) !important;
+  cursor: not-allowed;
+  border-color: var(--glass-border) !important;
+  opacity: 0.6;
+}
+
+.vModalButton {
+  margin-top: 12px;
+  background: #000;
+  color: var(--emerald-600);
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--emerald-600);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
+  transition: all 0.35s var(--ease-zen);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.vModalButton:hover {
+  background: var(--emerald-600);
+  color: var(--slate-900);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+  transform: translateY(-2px);
+}
+
+.vModalClose {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-snow);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  font-size: 16px;
+  color: var(--slate-600);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--ease-zen);
+}
+
+.vModalClose:hover {
+  background: #000;
+  color: #ef4444;
+  border-color: #ef4444;
+  transform: rotate(90deg) scale(1.1);
+}
+
+

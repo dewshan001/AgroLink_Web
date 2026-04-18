@@ -1,0 +1,219 @@
+﻿.myBlogs {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.myBlogsHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.myBlogsHeader h1 {
+    font-size: 36px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.myBlogsHeader p {
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+.myBlogsEmpty {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.myBlogsEmpty p {
+    font-size: 20px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.myBlogsWriteBtn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.myBlogsWriteBtn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Post Grid */
+.myBlogsPosts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.myBlogPost {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.myBlogPost:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.myBlogPostImgWrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.myBlogPostImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.myBlogPost:hover .myBlogPostImg {
+    transform: scale(1.05);
+}
+
+.myBlogPostImgPlaceholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 40px;
+}
+
+/* Badges */
+.myBlogPostStatusBadge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-approved {
+    background-color: #10b981;
+    /* green */
+}
+
+.status-pending {
+    background-color: #f59e0b;
+    /* amber */
+}
+
+.status-rejected {
+    background-color: #ef4444;
+    /* red */
+}
+
+.myBlogPostCatBadge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Info */
+.myBlogPostInfo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.myBlogPostMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.myBlogPostTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.myBlogPostTitle:hover {
+    color: var(--primary-color);
+}
+
+.myBlogPostDesc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+/* Actions */
+.myBlogPostActions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.btn-view {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-view:hover {
+    background-color: var(--primary-dark);
+}
+

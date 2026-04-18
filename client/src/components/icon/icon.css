@@ -1,0 +1,310 @@
+﻿/* icon.css - Right Side Fixed Icon */
+
+.icon {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 52px;
+    height: 52px;
+    background: var(--emerald-600);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-zen);
+    z-index: 9999;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    animation: slideInRight 0.6s ease-out, pulse 2s infinite 0.6s;
+}
+
+/* Icon Inside */
+.icon i {
+    font-size: 22px;
+    color: white;
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Hover Effects */
+.icon:hover {
+    background: var(--emerald-700);
+    transform: scale(1.08);
+    box-shadow: 0 25px 40px rgba(5, 150, 105, 0.35);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.icon:hover i {
+    transform: scale(1.05);
+}
+
+/* Active (Click) Effect */
+.icon:active {
+    transform: scale(0.95);
+    box-shadow: 0 10px 20px rgba(5, 150, 105, 0.45);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.55);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(5, 150, 105, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+    }
+}
+
+/* Slide In Animation - Right Side à¶‘à¶šà·™à¶±à·Š */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px) scale(0.5);
+        right: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        right: 40px;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(25);
+        opacity: 0;
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 40px rgba(3, 204, 70, 0.6);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.icon {
+    animation: slideInRight 0.6s ease-out, float 3s ease-in-out infinite, pulse 2s infinite;
+}
+
+/* Tooltip - Right Side à¶‘à¶šà·š */
+.icon .tooltip {
+    position: absolute;
+    right: 65px;  /* tooltip à¶‘à¶šà·š position à¶‘à¶š adjust à¶šà·…à· */
+    background: #1e2b3a;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon .tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 6px solid #1e2b3a;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+.icon:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    right: 75px;
+}
+
+/* Responsive - Right Side Spacing */
+@media screen and (max-width: 1024px) {
+    .icon {
+        right: 30px;
+        bottom: 30px;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .icon i {
+        font-size: 20px;
+    }
+    
+    .icon .tooltip {
+        right: 60px;
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+    
+    .icon:hover .tooltip {
+        right: 70px;
+    }
+    
+    @keyframes slideInRight {
+        to {
+            right: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icon {
+        right: 25px;
+        bottom: 25px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .icon i {
+        font-size: 19px;
+    }
+    
+    .icon .tooltip {
+        right: 55px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    .icon:hover .tooltip {
+        right: 65px;
+    }
+    
+    @keyframes slideInRight {
+        to {
+            right: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon {
+        right: 20px;
+        bottom: 20px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .icon i {
+        font-size: 22px;
+    }
+    
+    .icon .tooltip {
+        display: none; /* mobile à¶‘à¶šà·š tooltip à¶‘à¶š hide */
+    }
+    
+    @keyframes slideInRight {
+        to {
+            right: 20px;
+        }
+    }
+}
+
+/* Scroll Hide/Show */
+.icon.scroll-hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100px);
+}
+
+.icon.scroll-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .icon {
+        background: linear-gradient(145deg, #07d430, #038218);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .icon .tooltip {
+        background: #2d3a4a;
+    }
+    
+    .icon .tooltip::after {
+        border-left-color: #2d3a4a;
+    }
+}
+
+/* Loading State */
+.icon.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.icon.loading i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Click Animation */
+.icon.clicked {
+    animation: clickPop 0.3s ease-out;
+}
+
+@keyframes clickPop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Right Side Badge (optional) */
+.icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 3px 8px rgba(255, 71, 87, 0.4);
+}
+

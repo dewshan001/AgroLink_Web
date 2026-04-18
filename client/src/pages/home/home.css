@@ -1,0 +1,53 @@
+﻿.home {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.homeTabs {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 32px 0 16px 0;
+}
+.homeTabBtn {
+    background: var(--bg-snow);
+    border: 1px solid #d1d5db;
+    border-radius: 16px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #059669;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(6,78,59,0.06);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.homeTabBtn.active {
+    background: linear-gradient(135deg, #059669 0%, #06523c 100%);
+    color: #fff;
+    border-color: #059669;
+    box-shadow: 0 4px 16px rgba(5,150,105,0.12);
+}
+.homeTabBtn:hover {
+    background: #e6f7ff;
+    color: #06523c;
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        flex-direction: column;
+    }
+    .homeTabs {
+        flex-direction: column;
+        gap: 12px;
+        margin: 24px 0 8px 0;
+    }
+    .homeTabBtn {
+        width: 100%;
+        padding: 12px 0;
+    }
+}
+

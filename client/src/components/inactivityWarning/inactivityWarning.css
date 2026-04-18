@@ -1,0 +1,299 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ============================================
+   Session Inactivity Modal - Premium Design
+   ============================================ */
+
+.inactivity-warning-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(6, 78, 59, 0.3) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: overlayFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+  }
+}
+
+.inactivity-warning-modal {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(6, 78, 59, 0.15);
+  border-radius: 40px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 40px 120px -20px rgba(0, 0, 0, 0.25);
+  max-width: 520px;
+  width: 90%;
+  animation: modalSlideUp 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.inactivity-warning-content {
+  padding: 60px 48px;
+  text-align: center;
+  position: relative;
+}
+
+/* Icon */
+.inactivity-warning-icon {
+  margin-bottom: 28px;
+  animation: iconBounce 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+@keyframes iconBounce {
+  0% {
+    transform: scale(0.7) translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.inactivity-warning-icon svg {
+  filter: drop-shadow(0 8px 16px rgba(5, 150, 105, 0.15));
+}
+
+/* Title */
+.inactivity-warning-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+  animation: textFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Message */
+.inactivity-warning-message {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 32px 0;
+  font-weight: 400;
+  animation: textFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.35s both;
+}
+
+/* Action Buttons */
+.inactivity-warning-actions {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+  animation: textFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+.btn-extend,
+.btn-logout {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-extend {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+  box-shadow: 0 10px 24px -5px rgba(5, 150, 105, 0.5);
+}
+
+.btn-extend::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-extend:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -8px rgba(5, 150, 105, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-extend:hover::before {
+  opacity: 1;
+}
+
+.btn-extend:active {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -5px rgba(5, 150, 105, 0.5);
+}
+
+.btn-logout {
+  background: #000000;
+  color: #059669;
+  border: 1.5px solid #059669;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-logout:hover {
+  background: #059669;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -8px rgba(5, 150, 105, 0.4);
+}
+
+.btn-logout:active {
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+/* Hint Text */
+.inactivity-warning-hint {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+  animation: textFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.45s both;
+}
+
+/* Dark Theme */
+[data-theme="dark"] .inactivity-warning-overlay {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(10, 10, 10, 0.4) 100%);
+}
+
+[data-theme="dark"] .inactivity-warning-modal {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(6, 78, 59, 0.25);
+}
+
+[data-theme="dark"] .inactivity-warning-title {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .inactivity-warning-message {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .inactivity-warning-hint {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .btn-logout {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #059669;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .btn-logout:hover {
+  background: #059669;
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .inactivity-warning-modal {
+    width: 95%;
+    border-radius: 32px;
+  }
+
+  .inactivity-warning-content {
+    padding: 40px 28px;
+  }
+
+  .inactivity-warning-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .inactivity-warning-message {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .inactivity-warning-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .btn-extend,
+  .btn-logout {
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+  .inactivity-warning-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .inactivity-warning-hint {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inactivity-warning-content {
+    padding: 32px 20px;
+  }
+
+  .inactivity-warning-title {
+    font-size: 22px;
+  }
+
+  .inactivity-warning-actions {
+    gap: 10px;
+  }
+}
+
+

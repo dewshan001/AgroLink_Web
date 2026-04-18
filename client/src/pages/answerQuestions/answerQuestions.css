@@ -1,0 +1,330 @@
+﻿.answerQuestions {
+  flex: 9;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: calc(100vh - 50px);
+}
+
+.answerQuestionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.aqHeaderMain {
+  flex: 1;
+}
+
+.aqToggleAddBtn {
+  background-color: var(--emerald-600);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+}
+
+.aqToggleAddBtn:hover {
+  background-color: var(--emerald-700);
+  transform: translateY(-2px);
+}
+
+.aqCustomFormContainer {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  border: 1px solid var(--slate-200);
+}
+
+.aqCustomFormTitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--slate-900);
+}
+
+.aqInputGroup {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aqInputGroup label {
+  font-weight: 600;
+  color: #666;
+  font-size: 14px;
+}
+
+.aqSelectInput {
+  padding: 12px 15px;
+  border: 2px solid var(--slate-200);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: var(--bg-snow);
+  color: var(--slate-900);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.aqSelectInput:focus {
+  border-color: var(--emerald-600);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
+}
+
+.aqAnswerArea {
+  min-height: 120px;
+}
+
+.answerQuestionsTitle {
+  font-size: 36px;
+  font-family: 'Lora', serif;
+  margin-bottom: 10px;
+  color: var(--slate-900);
+  font-weight: 700;
+}
+
+.answerQuestionsSubtitle {
+  color: #666;
+  font-size: 16px;
+}
+
+.aqList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.aqItem {
+  background-color: var(--bg-card);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--slate-200);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aqItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--emerald-600);
+}
+
+.aqItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.aqHeaderInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.aqUserInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aqAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--emerald-600);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.aqUserDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.aqUser {
+  font-weight: 600;
+  color: var(--slate-900);
+  font-size: 15px;
+}
+
+.aqDate {
+  font-size: 12px;
+  color: #888;
+}
+
+.aqBadges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.aqCategory {
+  background-color: rgba(29, 131, 72, 0.1);
+  color: var(--emerald-600);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.aqConfidence {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.aqQuestionBody {
+  margin: 15px 0 20px 0;
+}
+
+.aqQuestion {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--slate-900);
+  font-weight: 500;
+}
+
+.aqForm {
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--slate-200);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+  margin-top: 20px;
+}
+
+.aqFormLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--slate-900);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aqFormLabel i {
+  color: var(--emerald-600);
+}
+
+.aqInputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.aqInput {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid var(--slate-200);
+  border-radius: 10px;
+  background-color: var(--bg-snow);
+  color: var(--slate-900);
+  font-family: inherit;
+  font-size: 15px;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.aqInput:focus {
+  outline: none;
+  border-color: var(--emerald-600);
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15); /* Light green glow */
+}
+
+.aqActionRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.aqSubmit {
+  background-color: var(--emerald-600);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px; /* Changed from 30px to standard boxy but rounded */
+  cursor: pointer;
+  font-weight: 700; /* Bolder text for better visibility */
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2); /* Tinted shadow to match theme */
+}
+
+.aqSubmit:hover:not(:disabled) {
+  background-color: var(--emerald-700);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
+}
+
+.aqSubmit:disabled {
+  background-color: var(--slate-200); /* Greyed out completely when disabled */
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.noQuestions {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px dashed var(--slate-200);
+}
+
+.noQuestionsIcon {
+  font-size: 48px;
+  color: var(--emerald-600);
+  margin-bottom: 20px;
+}
+
+.noQuestionsText {
+  font-size: 20px;
+  color: var(--slate-900);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.noQuestionsSubtext {
+  color: #777;
+}
+
+

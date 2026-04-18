@@ -1,0 +1,172 @@
+﻿/* â”€â”€ Rich Text Editor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.richEditorWrap {
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-snow);
+  transition: border-color 0.2s var(--ease-zen), box-shadow 0.2s var(--ease-zen);
+}
+
+.richEditorWrap:focus-within {
+  border-color: var(--emerald-600);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+/* Toolbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.richEditorToolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--glass-border);
+  background: var(--bg-card);
+  flex-wrap: wrap;
+}
+
+.richEditorGroup {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.richEditorGroup + .richEditorGroup {
+  margin-left: 6px;
+  padding-left: 8px;
+  border-left: 1.5px solid var(--glass-border);
+}
+
+.richEditorBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--slate-600);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  flex-shrink: 0;
+}
+
+.richEditorBtn:hover {
+  background: var(--mint-100);
+  color: var(--emerald-700);
+}
+
+[data-theme='dark'] .richEditorBtn:hover {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--emerald-400, #34d399);
+}
+
+.richEditorBtn:active {
+  background: var(--emerald-600);
+  color: #fff;
+  transform: scale(0.9);
+}
+
+.richEditorBtnText {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Content area â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.richEditorContent {
+  min-height: 280px;
+  padding: 22px 26px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--slate-900);
+  outline: none;
+  overflow-y: auto;
+  word-break: break-word;
+}
+
+/* Placeholder */
+.richEditorContent[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--slate-400);
+  pointer-events: none;
+  display: block;
+  opacity: 0.55;
+}
+
+/* Heading styles inside editor */
+.richEditorContent h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--forest-900);
+  margin: 20px 0 10px;
+  line-height: 1.25;
+}
+
+.richEditorContent h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--forest-900);
+  margin: 16px 0 8px;
+  line-height: 1.3;
+}
+
+.richEditorContent p {
+  margin: 0 0 10px;
+}
+
+.richEditorContent ul,
+.richEditorContent ol {
+  padding-left: 26px;
+  margin: 6px 0 12px;
+}
+
+.richEditorContent li {
+  margin-bottom: 4px;
+}
+
+.richEditorContent b,
+.richEditorContent strong {
+  font-weight: 700;
+  color: var(--forest-900);
+}
+
+.richEditorContent i,
+.richEditorContent em {
+  font-style: italic;
+}
+
+.richEditorContent u {
+  text-decoration: underline;
+  text-decoration-color: var(--emerald-600);
+}
+
+.richEditorContent s {
+  opacity: 0.6;
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .richEditorToolbar {
+    padding: 6px 10px;
+    gap: 1px;
+  }
+
+  .richEditorBtn {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .richEditorContent {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+}
+
+

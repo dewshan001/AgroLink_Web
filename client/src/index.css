@@ -1,0 +1,203 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Zen Emerald Final Palette */
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --forest-900: #064e3b;
+  --mint-100: #ecfdf5;
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --slate-50:  #f8fafc;
+  --bg-snow: #ffffff; /* Pure White */
+  --bg-card: #ffffff;
+  --bg-surface: #f8fafc; /* Added for surface colors */
+  --glass-zen: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(6, 78, 59, 0.15);
+  
+  /* Precision Typography */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Modular Spacing */
+  --radius-zen: 24px;
+  --radius-sm: 8px;
+  --space-unit: 8px;
+  
+  /* Premium Shadows */
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.006);
+  --shadow-zen: 0 20px 40px -15px rgba(6, 78, 59, 0.05);
+  --shadow-input: 0 0 0 4px rgba(5, 150, 105, 0.05);
+  
+  /* Calm Transitions */
+  --ease-zen: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-zen: 0.4s;
+}
+
+[data-theme='dark'] {
+  --bg-snow: #0f172a; /* Deep Slate Background */
+  --bg-card: #1e293b; /* Elevated Slate Card */
+  --bg-surface: #1e293b; /* Elevated surface matching card */
+  --slate-900: #f8fafc; /* Soft off-white for primary text */
+  --slate-800: #f1f5f9;
+  --slate-700: #e2e8f0;
+  --slate-600: #cbd5e1; /* Muted slate for secondary text */
+  --slate-500: #94a3b8;
+  --slate-400: #64748b;
+  --slate-300: #475569;
+  --slate-200: #334155; /* Slate for borders/inputs */
+  --slate-100: #1e293b;
+  --slate-50:  #0f172a;
+  --glass-zen: rgba(30, 41, 59, 0.85);
+  --glass-border: rgba(51, 65, 85, 0.8);
+  --emerald-600: #10b981; /* Brighter green for pop */
+  --forest-900: #f1f5f9; /* Light text for headings */
+  --mint-100: #064e3b; /* Dark green accent for buttons/tags */
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-zen: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  --shadow-input: 0 0 0 4px rgba(16, 185, 129, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-snow);
+  color: var(--slate-900);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  -webkit-touch-callout: none;
+}
+
+/* Allow text selection in content areas */
+p, span, a, li, label, textarea, input[type="text"], input[type="email"], input[type="password"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Prevent text selection on interactive elements */
+button, img, svg, [role="button"], [role="tab"], .icon, .logo {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+/* Additional UI elements that shouldn't be selectable */
+[class*="btn"], [class*="button"], [class*="card"], [class*="header"], [class*="title"], i, [class*="icon"], .fa, .fas, .far, .fal, .fad {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--forest-900);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--duration-zen) var(--ease-zen);
+}
+
+.link:hover {
+  color: var(--emerald-600);
+}
+
+/* Zen Glass Surface */
+.glass-panel {
+  background: var(--glass-zen);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-zen);
+}
+
+.verification-backdrop {
+  filter: blur(4px);
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.4s var(--ease-zen), filter 0.4s var(--ease-zen);
+}
+
+/* Refined Entrance */
+@keyframes zenEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: zenEntrance 0.8s var(--ease-zen) forwards;
+}
+
+/* Balanced Alerts */
+.alert {
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  border: 1px solid transparent;
+  animation: zenEntrance 0.4s var(--ease-zen) forwards;
+}
+
+.alert-error {
+  background: #fffafa;
+  color: #9b2c2c;
+  border-color: #feb2b2;
+}
+
+.alert-warning {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+
+.alert-success {
+  background: var(--mint-100);
+  color: var(--emerald-700);
+  border-color: rgba(5, 150, 105, 0.2);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.05);
+}
+
+
+
+select, option { background-color: var(--bg-card); color: var(--slate-900); }
+
+
+input, textarea, select { background-color: var(--bg-card); color: var(--slate-900); }
+

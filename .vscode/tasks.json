@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Dev: API",
+      "type": "npm",
+      "script": "start",
+      "path": "api",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "api",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Dev: Client",
+      "type": "npm",
+      "script": "start",
+      "path": "client",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "client",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Dev: All",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Dev: API",
+        "Dev: Client"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

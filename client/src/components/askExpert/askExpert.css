@@ -1,0 +1,92 @@
+﻿.askExpert-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 400px;
+  padding: 40px 0;
+  background: linear-gradient(135deg, #f0f9f6 0%, #e6f7ff 100%);
+}
+
+.askExpert-card {
+  background: var(--bg-snow);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(6,78,59,0.08);
+  padding: 36px 32px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.askExpert-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #059669;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.askExpert-desc {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.askExpert-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.askExpert-input {
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  padding: 16px;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.askExpert-input:focus {
+  border-color: #059669;
+}
+
+.askExpert-btn {
+  background: linear-gradient(135deg, #059669 0%, #06523c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.askExpert-btn:hover {
+  background: linear-gradient(135deg, #06523c 0%, #059669 100%);
+}
+
+.askExpert-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #059669;
+  font-size: 1.1rem;
+  margin-top: 16px;
+}
+.askExpert-success i {
+  font-size: 2rem;
+  color: #059669;
+}
+
+

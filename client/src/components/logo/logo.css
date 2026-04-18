@@ -1,0 +1,109 @@
+﻿.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.4s var(--ease-zen);
+}
+
+.logoIconWrapper {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: var(--emerald-50);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s var(--ease-zen);
+}
+
+.logoIcon {
+  font-size: 18px;
+  color: var(--emerald-600);
+  z-index: 2;
+  transition: all 0.5s var(--ease-zen);
+}
+
+.logoPulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--emerald-400);
+  border-radius: 10px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.logoText {
+  display: flex;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.logoAgro {
+  color: var(--emerald-600);
+  transition: all 0.4s var(--ease-zen);
+}
+
+.logoLinkPart {
+  color: var(--forest-900);
+  transition: all 0.4s var(--ease-zen);
+}
+
+/* Animations & Hover Effects */
+.logoContainer:hover .logoIconWrapper {
+  background: var(--emerald-600);
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.logoContainer:hover .logoIcon {
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+.logoContainer:hover .logoAgro {
+  color: var(--forest-900);
+  transform: translateX(2px);
+}
+
+.logoContainer:hover .logoLinkPart {
+  color: var(--emerald-600);
+  transform: translateX(4px);
+}
+
+.logoContainer:active {
+  transform: scale(0.95);
+}
+
+/* Initial Entrance Animation */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logoContainer {
+  animation: logoEntrance 0.8s var(--ease-zen) forwards;
+}
+
+/* Floating Animation for Icon */
+@keyframes leafFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.logoIconWrapper {
+  animation: leafFloat 3s ease-in-out infinite;
+}
+
+
